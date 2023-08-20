@@ -15,11 +15,11 @@ Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed l
 ```r
 x <- 2+4
 print(x)
-```
 
-```javascript
-x <- 2+4
-print(x)
+# Mean of numbers
+list_of_numbers <- c(1, 3, 5, 5, 6 ,7)
+mean_number <- mean(list_of_numbers)
+print(mean_number)
 ```
 
 Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna. Ut orci risus, accumsan porttitor, cursus quis.

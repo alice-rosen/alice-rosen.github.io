@@ -1,15 +1,15 @@
 #-------------------------------
 # Site Settings
-title: Simpler
+title: Portfolio
 logo: "/images/logo.svg" # You can add own logo. For example "/images/logo.svg".
 logo_dark: "/images/logo-dark.svg"
-description: Simpler – A modern portfolio theme for Jekyll.
+description: Alice's data viz portfolio.
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 
 #-------------------------------
 # Author Settings
-author_name: Aaron Simons
+author_name: Alice Rosen
 
 
 #-------------------------------
@@ -56,7 +56,7 @@ hero:
 
 #-------------------------------
 # Projects Settings
-section_projects_title: 👨🏻‍💻 Selected Works
+section_projects_title: Selected Works
 
 
 #-------------------------------

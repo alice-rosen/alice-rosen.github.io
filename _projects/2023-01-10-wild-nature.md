@@ -12,7 +12,12 @@ Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed l
 
 ## The Benefits of Custom Illustrations
 
-```{r}
+```r
+x <- 2+4
+print(x)
+```
+
+```javascript
 x <- 2+4
 print(x)
 ```

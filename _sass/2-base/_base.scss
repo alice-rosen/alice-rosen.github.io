@@ -138,6 +138,42 @@ pre {
   color: var(--heading-font-color);
 }
 
+/**
+ * Code formatting
+ */
+pre,
+code {
+  font-size: 0.9375em;
+  border-radius: 3px;
+  background-color: #fa5657;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.highlight {
+  border-radius: 3px;
+  background: #fa5657;
+  @extend %vertical-rhythm;
+
+  .highlighter-rouge & {
+    background: #fa5657;
+  }
+}
+
+
 img,
 .lightense-wrap {
   max-width: 100%;

@@ -47,8 +47,8 @@ social:
 # Hero Settings
 hero:
   enable: true
-  hero_title: Aaron Simons. Building Digital <span><i>Products & Brands</i></span> # Add the "span" tag to highlight text.
-  hero_description: I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences.
+  hero_title: Data Viz Portfolio # Add the "span" tag to highlight text. E.g. <span><i>highlighted text</i></span>
+  hero_description: I’m Alice, a PhD student at the University of Oxford - sharing my learning adventure into data viz & analysis.
   hero_image: "/images/01.jpg"
   hero_button_contact: Get In Touch
   hero_button_about: About Me
@@ -56,37 +56,7 @@ hero:
 
 #-------------------------------
 # Projects Settings
-section_projects_title: Selected Works
-
-
-#-------------------------------
-# Testimonials Section
-section_testimonial_title: 🙂 What Clients Say
-
-testimonial_items:
-  - name: "Carla Kenter"
-    image: "/images/client-1.jpg"
-    designation: "Professional Artist"
-    link: "https://twitter.com/"
-    content : "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
-
-  - name: "Kierra Botosh"
-    image: "/images/client-2.jpg"
-    designation: "Growth & Community"
-    link: "https://facebook.com/"
-    content : "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
-
-  - name: "Randy Herwitz"
-    image: "/images/client-3.jpg"
-    designation: "Executive Assistant"
-    link: "https://twitter.com/"
-    content : "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
-
-  - name: "Hanna Franci"
-    image: "/images/client-4.jpg"
-    designation: "Product Designer"
-    link: "https://twitter.com/"
-    content : "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+section_projects_title: Recent projects
 
 
 #-------------------------------

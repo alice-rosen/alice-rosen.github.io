@@ -138,39 +138,6 @@ pre {
   color: var(--heading-font-color);
 }
 
-/**
- * Code formatting
- */
-pre,
-code {
-  font-size: 0.9375em;
-  border-radius: 3px;
-  background-color: var(--background-alt-color);
-}
-
-pre {
-  padding: 8px 12px;
-  margin: 30px 2px;
-  overflow-x: auto;
-
-  > code {
-    border: 0px;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-.highlight {
-  border-radius: 3px;
-  background: var(--background-alt-color);
-  transition: $global-transition;
-
-  .highlighter-rouge & {
-    background: var(--background-alt-color);
-  }
-}
-
-
 img,
 .lightense-wrap {
   max-width: 100%;

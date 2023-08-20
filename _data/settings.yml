@@ -1,8 +1,8 @@
 #-------------------------------
 # Site Settings
 title: Portfolio
-logo: "/images/logo-alice.png" # You can add own logo. For example "/images/logo.svg".
-logo_dark: "/images/logo-alice-dark.png"
+logo: "/images/logo-alice-new.png" # You can add own logo. For example "/images/logo.svg".
+logo_dark: "/images/logo-alice-new-dark.png"
 description: Alice's data viz portfolio.
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 

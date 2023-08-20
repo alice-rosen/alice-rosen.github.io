@@ -145,7 +145,7 @@ pre,
 code {
   font-size: 0.9375em;
   border-radius: 3px;
-  background-color: #fa5657;
+  background-color: var(--background-alt-color);
 }
 
 code {
@@ -165,11 +165,11 @@ pre {
 
 .highlight {
   border-radius: 3px;
-  background: #fa5657;
-  @extend %vertical-rhythm;
+  background: var(--background-alt-color);
+  transition: $global-transition;
 
   .highlighter-rouge & {
-    background: #fa5657;
+    background: var(--background-alt-color);
   }
 }
 

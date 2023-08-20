@@ -13,10 +13,8 @@ Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed l
 ## The Benefits of Custom Illustrations
 
 ```{r}
-
 x <- 2+4
 print(x)
-
 ```
 
 Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna. Ut orci risus, accumsan porttitor, cursus quis.

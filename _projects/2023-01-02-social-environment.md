@@ -1,6 +1,6 @@
 ---
 title: Social Environment
-subtitle: Abstract
+subtitle: R; Python
 summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
 client: Anvod Studio
 tools: 1. Figma 2. Illustrator 3. Procreate

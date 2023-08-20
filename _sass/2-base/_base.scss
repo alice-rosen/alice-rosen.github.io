@@ -148,13 +148,9 @@ code {
   background-color: var(--background-alt-color);
 }
 
-code {
-  padding: 1px 5px;
-  margin: 1px 10px;
-}
-
 pre {
   padding: 8px 12px;
+  margin: 1px 10px;
   overflow-x: auto;
 
   > code {

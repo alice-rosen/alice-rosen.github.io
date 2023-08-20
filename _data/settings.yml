@@ -72,7 +72,7 @@ section_tags_title: ✌️ Explore Topics
 #-------------------------------
 # Newsletter Settings
 mailchimp_settings:
-  enable: true
+  enable: false
   mailchimp_title: Get interesting news
   mailchimp_identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
   mailchimp_input_text: Enter your email address
@@ -81,7 +81,7 @@ mailchimp_settings:
 
 #-------------------------------
 # Footer Settings
-footer_description: I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences.
+footer_description: I’m Alice, a PhD student at the University of Oxford - sharing my learning adventure into data viz & analysis.
 
 
 #-------------------------------
@@ -105,7 +105,7 @@ footer_menu_settings:
 #-------------------------------
 # Contact Settings
 contact:
-  email: your@email.com # Add your form_id
+  email: alice@rosen.org.uk # Add your form_id
   description: Simpler comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want. # Add a description of your form
 
 # NOTE

@@ -4,10 +4,10 @@
 
 .highlight {
   margin-bottom: 32px;
-  background: var(--syntax-highlighting-background);
+  background: var(--background-alt-color);
 
   .highlighter-rouge & {
-    background: var(--syntax-highlighting-background);
+    background: var(--background-alt-color);
   }
 
   .c     { color: #998; font-style: italic } // Comment

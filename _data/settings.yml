@@ -29,8 +29,11 @@ menu_settings:
 #-------------------------------
 # Social Settings
 social:
-- {icon: "fa-brands fa-bluesky", link: "https://bsky.app/profile/alice-rosen.bsky.social"}
-- {icon: "fa-brands fa-github", link: "https://github.com/alice-rosen/"}
+  - {icon: "fa-brands fa-bluesky", link: "https://bsky.app/profile/alice-rosen.bsky.social"}
+  - {icon: "fa-brands fa-github", link: "https://github.com/alice-rosen/"}
+  - {icon: "fa-brands fa-linkedin", link: "https://www.linkedin.com/in/alicemrosen/"}
+  - {icon: "ai ai-orcid", link: "https://orcid.org/0000-0002-4808-8318"}
+  - {icon: "ai ai-google-scholar", link: "https://scholar.google.com/citations?user=Ih0mxsIAAAAJ&hl=en"}
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
 # Other icons can be found at https://fontawesome.com/icons

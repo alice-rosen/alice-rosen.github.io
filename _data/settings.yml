@@ -29,7 +29,7 @@ menu_settings:
 #-------------------------------
 # Social Settings
 social:
-- {icon: "fa-brands fa-twitter", link: "https://twitter.com/AliceRosen"}
+- {icon: "fa-brands fa-bluesky", link: "https://bsky.app/profile/alice-rosen.bsky.social"}
 - {icon: "fa-brands fa-github", link: "https://github.com/alice-rosen/"}
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}

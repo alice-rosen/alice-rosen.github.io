@@ -1,6 +1,15 @@
+# Jekyll build output
 _site
-.sass-cache
 .jekyll-cache
 .jekyll-metadata
+.sass-cache
+
+# Ruby / Bundler
+.bundle
+vendor
+
+# System files
 .DS_Store
+
+# R
 *.Rhistory

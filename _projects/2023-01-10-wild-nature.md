@@ -6,6 +6,7 @@ client: Anvod Studio
 tools: 1. Figma 2. Illustrator 3. Procreate
 date: 2023-01-10 08:01:35 +0300
 image: '/images/project-1.jpg'
+published: false
 ---
 
 Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Donec lacus viverran, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus enim ultrices.

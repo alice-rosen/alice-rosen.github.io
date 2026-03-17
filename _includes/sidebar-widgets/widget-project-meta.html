@@ -21,4 +21,16 @@
     <time class="project-meta__text" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-B, %Y" %}{{ page.date | date: date_format }}</time>
   </div>
   {% endif %}
+  {% if page.article %}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Article</h3>
+    <div class="project-meta__text">
+      {{ page.article.authors }} ({{ page.article.year }})<br>
+      {{ page.article.journal }}<br>
+      <a href="https://doi.org/{{ page.article.doi }}" target="_blank" rel="noopener noreferrer">
+        DOI link
+      </a>
+    </div>
+  </div>
+  {% endif %}
 </div>

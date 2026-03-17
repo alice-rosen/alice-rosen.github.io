@@ -4,6 +4,7 @@ subtitle: Poster
 summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
 date: 2023-01-05 08:01:35 +0300
 image: '/images/project-6.jpg'
+published: false
 ---
 
 Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Donec lacus viverran, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus enim ultrices.

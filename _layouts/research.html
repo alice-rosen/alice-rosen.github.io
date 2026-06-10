@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="container research-detail">
+  <div class="project-info">
+    {% if page.subtitle %}
+    <p class="project-info__subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+    <h1 class="project-info__title">{{ page.title }}</h1>
+  </div>
+
+  {% if page.image %}
+  <div class="project-info-image">
+    <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <div class="research-detail__content project-content">
+    {{ content }}
+  </div>
+</div>

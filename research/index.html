@@ -1,0 +1,64 @@
+---
+layout: default
+title: Research
+---
+
+<div class="page-wrapper research-page">
+  <div class="container">
+    <div class="page-wrapper__info">
+      <h1 class="page-info__title">{{ page.title }}</h1>
+    </div>
+  </div>
+
+  <div class="container animate">
+    {% assign sorted_research = site.research | sort: 'date' | reverse %}
+    {% if sorted_research.size > 0 %}
+    <div class="row">
+      {% for project in sorted_research %}
+      <article class="project col col-4 col-w-6 col-t-12">
+        <div class="project__content">
+          {% if project.image %}
+          <div class="project__head">
+            <div class="project__image">
+              <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+            </div>
+          </div>
+          {% endif %}
+          <div class="project__inner">
+            {% if project.subtitle %}
+            <div class="project__info">
+              <div class="project__subtitle">{{ project.subtitle }}</div>
+            </div>
+            {% endif %}
+            <h2 class="project__title">
+              <a href="{{ project.url | relative_url }}" class="project__link">{{ project.title }}</a>
+            </h2>
+            {% if project.summary %}
+            <p class="project__excerpt">{{ project.summary }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="research-page__empty">Research project pages will be added here soon.</p>
+    {% endif %}
+  </div>
+
+  <section class="section publications animate" aria-labelledby="publications-title">
+    <div class="container">
+      <div class="section__info">
+        <div class="section__head">
+          <h2 class="section__title" id="publications-title">Recent publications</h2>
+          <a class="section__link" href="https://orcid.org/0000-0002-4808-8318" target="_blank" rel="noopener">View ORCID</a>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none" aria-hidden="true"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+      </div>
+
+      <div id="publications-list" class="publications__list" data-orcid="0000-0002-4808-8318" aria-live="polite">
+        <p class="publications__status">Loading publications...</p>
+      </div>
+    </div>
+  </section>
+</div>

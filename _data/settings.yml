@@ -20,8 +20,10 @@ menu_settings:
       url: "/"
     - title: "About"
       url: "/about/"
-    - title: "Blog"
-      url: "/blog/"
+    - title: "Research"
+      url: "/research/"
+    - title: "Illustration"
+      url: "/illustration/"
     - title: "Projects"
       url: "/projects/"
 
@@ -55,11 +57,6 @@ section_projects_title: Recent projects
 
 
 #-------------------------------
-# Blog Section
-section_blog_title: Read Latest Posts
-#-------------------------------
-
-
 # Tags Section
 section_tags_title: Explore Topics
 
@@ -87,10 +84,12 @@ footer_menu_settings:
       url: "/"
     - title: "About"
       url: "/about/"
+    - title: "Research"
+      url: "/research/"
+    - title: "Illustration"
+      url: "/illustration/"
     - title: "Projects"
       url: "/projects/"
-    - url: "/blog/"
-      title: "Blog"
 
 
 #-------------------------------

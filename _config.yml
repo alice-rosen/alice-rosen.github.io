@@ -23,6 +23,9 @@ collections:
   pages:
     output: true
     permalink: /:name
+  research:
+    output: true
+    permalink: /research/:slug
   posts:
     output: true
     permalink: /blog/:slug
@@ -41,6 +44,11 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research"
   - scope:
       path: ""
       type: "posts"

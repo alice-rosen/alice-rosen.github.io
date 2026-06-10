@@ -1,6 +1,6 @@
 ---
 title: Hand Drawn People
-subtitle: Poster
+subtitle: Illustration
 summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
 date: 2023-01-05 08:01:35 +0300
 image: '/images/project-6.jpg'

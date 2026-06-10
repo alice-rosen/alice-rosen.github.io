@@ -26,9 +26,20 @@ image:
   </div>
 
   <div class="container animate">
+    <nav class="project-filters" aria-label="Filter projects by type">
+      <a class="project-filter is-active" href="{{ '/projects/' | relative_url }}" data-project-filter="all" aria-current="page">All</a>
+      <a class="project-filter" href="{{ '/projects/?label=cartography' | relative_url }}" data-project-filter="cartography">Cartography</a>
+      <a class="project-filter" href="{{ '/projects/?label=data-vis' | relative_url }}" data-project-filter="data-vis">Data Vis</a>
+      <a class="project-filter" href="{{ '/projects/?label=illustration' | relative_url }}" data-project-filter="illustration">Illustrations</a>
+      <a class="project-filter" href="{{ '/projects/?label=infographic' | relative_url }}" data-project-filter="infographic">Infographics</a>
+      <a class="project-filter" href="{{ '/projects/?label=research' | relative_url }}" data-project-filter="research">Research</a>
+    </nav>
+
+    <p class="project-filters__empty" hidden>No projects have this label yet.</p>
+
     <div class="row">
       {% for project in site.projects reversed %}
-      <article class="project col col-4 col-w-6 col-t-12">
+      <article class="project col col-4 col-w-6 col-t-12" data-project-label="{{ project.subtitle | slugify }}">
         <div class="project__content">
           {% if project.image %}
           <div class="project__head">

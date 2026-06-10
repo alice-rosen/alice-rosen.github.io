@@ -11,11 +11,21 @@ layout: default
     <h1 class="project-info__title">{{ page.title }}</h1>
   </div>
 
-  {% if page.image %}
-  <div class="project-info-image">
-    <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+  <div class="row project-overview">
+    {% if page.image %}
+    <div class="project-overview__image col col-7 col-d-12">
+      <div class="project-info-image">
+        <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="project-overview__meta col {% if page.image %}col-5{% else %}col-7{% endif %} col-d-12">
+      <aside class="sidebar">
+        {% include sidebar-widgets/widget-project-meta.html %}
+      </aside>
+    </div>
   </div>
-  {% endif %}
 
   <div class="row">
     <div class="project-left col col-7 col-d-12">
@@ -42,7 +52,6 @@ layout: default
 
     <div class="project-right col col-5 col-d-12">
       <aside class="sidebar">
-        {% include sidebar-widgets/widget-project-meta.html %}
         {% include sidebar-widgets/widget-recent-projects.html %}
       </aside>
     </div>

@@ -33,4 +33,18 @@
     </div>
   </div>
   {% endif %}
+  {% if page.subtitle %}
+  {% assign project_label = page.subtitle | slugify %}
+  {% capture project_label_plural %}
+    {% case project_label %}
+      {% when 'infographic' %}infographics
+      {% when 'cartography' %}cartography projects
+      {% when 'data-vis' %}data visualisations
+      {% when 'research' %}research projects
+      {% when 'illustration' %}illustrations
+      {% else %}{{ page.subtitle | downcase }} projects
+    {% endcase %}
+  {% endcapture %}
+  <a class="project-meta__more" href="{{ '/projects/' | relative_url }}?label={{ project_label }}">See other {{ project_label_plural | strip }}</a>
+  {% endif %}
 </div>

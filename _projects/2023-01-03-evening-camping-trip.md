@@ -1,6 +1,6 @@
 ---
 title: Evening Camping Trip
-subtitle: Desing
+subtitle: Illustration
 summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
 tools: 1. Illustrator 2. Procreate
 date: 2023-01-03 08:01:35 +0300

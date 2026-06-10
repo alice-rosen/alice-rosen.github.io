@@ -1,6 +1,41 @@
 /* Projects */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.project-filter {
+  display: inline-flex;
+  padding: 9px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--heading-font-color);
+  background: var(--background-color);
+
+  &:hover,
+  &.is-active {
+    color: var(--dark);
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+  }
+}
+
+.project-filters__empty {
+  margin: 0 0 36px;
+  color: var(--text-alt-color);
+}
+
 .project {
   margin-bottom: 32px;
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 .project__content {

@@ -1,9 +1,4 @@
 /* Project */
-.project-right {
-  @media (max-width: $desktop) {
-    order: -1;
-  }
-}
 
 .project-info {
   text-align: center;
@@ -41,20 +36,52 @@
 }
 
 .project-info-image {
-  margin-bottom: 48px;
-  border-radius: 22px;
-  overflow: hidden;
-  background: var(--background-alt-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
+    max-height: 620px;
     user-select: none;
   }
 
   @media (max-width: $desktop) {
+    img {
+      max-height: none;
+    }
+  }
+}
+
+.project-overview {
+  align-items: stretch;
+  margin-bottom: 48px;
+
+  .project-overview__meta,
+  .project-overview__meta .sidebar,
+  .project-overview__meta .project-meta {
+    height: 100%;
+  }
+
+  .project-overview__meta .sidebar {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $desktop) {
     margin-bottom: 32px;
+
+    .project-overview__image {
+      margin-bottom: 32px;
+    }
+
+    .project-overview__meta,
+    .project-overview__meta .sidebar,
+    .project-overview__meta .project-meta {
+      height: auto;
+    }
   }
 }
 
@@ -154,7 +181,39 @@
     display: block;
     font-size: 16px;
     color: var(--white);
-    opacity: .7;
+    font-weight: 600;
+    opacity: 1;
+
+    a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, .7);
+      text-underline-offset: 3px;
+
+      &:hover {
+        color: var(--white);
+        text-decoration-color: var(--white);
+      }
+    }
+  }
+
+  .project-meta__more {
+    display: inline-block;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .35);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, .7);
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: var(--white);
+      text-decoration-color: var(--white);
+    }
   }
 
   @media (max-width: $desktop) {

@@ -1,5 +1,51 @@
 ---
-layout: page
+layout: default
 title: Illustration
 permalink: /illustration/
 ---
+
+<div class="page-wrapper illustration-page">
+  <div class="container">
+    <div class="page-wrapper__info">
+      <h1 class="page-info__title">{{ page.title }}</h1>
+    </div>
+
+    <div class="illustration-gallery animate">
+      {% for artwork in site.static_files %}
+      {% if artwork.path contains '/images/illustration/gallery/' %}
+      {% if artwork.extname == '.jpg' or artwork.extname == '.jpeg' or artwork.extname == '.png' or artwork.extname == '.webp' %}
+      <figure class="illustration-gallery__item">
+        {% assign artwork_alt = artwork.basename | replace: '-', ' ' | replace: '_', ' ' | capitalize %}
+        <img class="lazy" data-src="{{ artwork.path | relative_url }}" alt="{{ artwork_alt }}">
+      </figure>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <section class="section etsy-section animate" aria-labelledby="etsy-title">
+      <div class="section__info">
+        <div class="section__head">
+          <h2 class="section__title" id="etsy-title">
+            <a href="{{ site.data.illustration.etsy_shop_url }}" target="_blank" rel="noopener">Browse prints and cards on Etsy</a>
+          </h2>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none" aria-hidden="true"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+      </div>
+
+      <div class="etsy-listings">
+        {% for listing in site.data.illustration.etsy_listings %}
+        <article class="etsy-listing">
+          <a class="etsy-listing__image" href="{{ listing.url }}" target="_blank" rel="noopener">
+            <img class="lazy" data-src="{{ listing.image | relative_url }}" alt="{{ listing.title }}">
+          </a>
+          <h3 class="etsy-listing__title">
+            <a href="{{ listing.url }}" target="_blank" rel="noopener">{{ listing.title }}</a>
+          </h3>
+          <span class="etsy-listing__source">View on Etsy</span>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</div>

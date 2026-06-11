@@ -1,15 +1,10 @@
 ---
 layout: default
-title: Research
+title: Science
+permalink: /science/
 ---
 
 <div class="page-wrapper research-page">
-  <div class="container">
-    <div class="page-wrapper__info">
-      <h1 class="page-info__title">{{ page.title }}</h1>
-    </div>
-  </div>
-
   <div class="container animate">
     {% assign sorted_research = site.research | sort: 'date' | reverse %}
     {% if sorted_research.size > 0 %}

@@ -20,10 +20,10 @@ menu_settings:
       url: "/"
     - title: "About"
       url: "/about/"
-    - title: "Research"
-      url: "/research/"
-    - title: "Illustration"
-      url: "/illustration/"
+    - title: "Science"
+      url: "/science/"
+    - title: "Art"
+      url: "/art/"
     - title: "Projects"
       url: "/projects/"
 
@@ -73,7 +73,7 @@ mailchimp_settings:
 
 #-------------------------------
 # Footer Settings
-footer_description: I’m Alice, a PhD student at the University of Oxford. I'm interested in forests, climate change, and Earth Observation, and I like using design to understand and communicate science.
+footer_description: I’m Alice, a PhD student at the University of Oxford. I'm interested in forests, climate change, and Earth Observation. I like using design to understand and communicate science.
 
 
 #-------------------------------
@@ -84,10 +84,10 @@ footer_menu_settings:
       url: "/"
     - title: "About"
       url: "/about/"
-    - title: "Research"
-      url: "/research/"
-    - title: "Illustration"
-      url: "/illustration/"
+    - title: "Science"
+      url: "/science/"
+    - title: "Art"
+      url: "/art/"
     - title: "Projects"
       url: "/projects/"
 

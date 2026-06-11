@@ -1,22 +1,18 @@
 ---
 layout: default
-title: Illustration
-permalink: /illustration/
+title: Art
+permalink: /art/
 ---
 
 <div class="page-wrapper illustration-page">
   <div class="container">
-    <div class="page-wrapper__info">
-      <h1 class="page-info__title">{{ page.title }}</h1>
-    </div>
-
     <div class="illustration-gallery animate">
       {% for artwork in site.static_files %}
       {% if artwork.path contains '/images/illustration/gallery/' %}
       {% if artwork.extname == '.jpg' or artwork.extname == '.jpeg' or artwork.extname == '.png' or artwork.extname == '.webp' %}
       <figure class="illustration-gallery__item">
         {% assign artwork_alt = artwork.basename | replace: '-', ' ' | replace: '_', ' ' | capitalize %}
-        <img class="lazy" data-src="{{ artwork.path | relative_url }}" alt="{{ artwork_alt }}">
+        <img src="{{ artwork.path | relative_url }}?v={{ artwork.modified_time | date: '%s' }}" alt="{{ artwork_alt }}" loading="lazy" decoding="async">
       </figure>
       {% endif %}
       {% endif %}

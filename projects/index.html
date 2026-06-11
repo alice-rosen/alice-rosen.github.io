@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Recent projects
+title: Projects
 image:
 ---
 
@@ -16,15 +16,6 @@ image:
 
 <!-- begin page-wrapper -->
 <div class="page-wrapper">
-  <div class="container">
-    <div class="page-wrapper__info">
-      <h1 class="page-info__title">{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.projects__settings.projects__title }}{% endif %}</h1>
-      {% if page.description %}
-        <p class="page-info__description">{{ page.description }}</p>
-      {% endif %}
-    </div>
-  </div>
-
   <div class="container animate">
     <nav class="project-filters" aria-label="Filter projects by type">
       <a class="project-filter is-active" href="{{ '/projects/' | relative_url }}" data-project-filter="all" aria-current="page">All</a>

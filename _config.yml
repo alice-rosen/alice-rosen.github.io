@@ -25,7 +25,7 @@ collections:
     permalink: /:name
   research:
     output: true
-    permalink: /research/:slug
+    permalink: /science/:slug
   posts:
     output: true
     permalink: /blog/:slug

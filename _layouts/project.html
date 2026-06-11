@@ -31,6 +31,37 @@ layout: default
     <div class="project-left col col-7 col-d-12">
       <div class="project-content">
         {{ content }}
+        {% if page.comparisons %}
+        <section class="project-comparisons" aria-label="Before and after comparisons">
+          {% for comparison in page.comparisons %}
+          {% assign before_label = comparison.before_label | default: 'Before' %}
+          {% assign after_label = comparison.after_label | default: 'After' %}
+          <figure class="project-comparison" data-comparison>
+            {% if comparison.title %}
+            <figcaption class="project-comparison__title">{{ comparison.title }}</figcaption>
+            {% endif %}
+            {% if comparison.package %}
+            <div class="project-comparison__package">
+              <span class="project-comparison__package-label">Built with</span>
+              <code>{{ comparison.package }}</code>
+            </div>
+            {% endif %}
+            <div class="project-comparison__frame">
+              <div class="project-comparison__after">
+                <img class="project-comparison__image project-comparison__image--after" src="{{ comparison.after | relative_url }}" alt="{{ comparison.after_alt | default: after_label }}">
+                <span class="project-comparison__label project-comparison__label--after">{{ after_label }}</span>
+              </div>
+              <div class="project-comparison__before" data-comparison-before>
+                <img class="project-comparison__image project-comparison__image--before" src="{{ comparison.before | relative_url }}" alt="{{ comparison.before_alt | default: before_label }}">
+                <span class="project-comparison__label project-comparison__label--before">{{ before_label }}</span>
+              </div>
+              <span class="project-comparison__divider" data-comparison-divider aria-hidden="true"></span>
+              <input class="project-comparison__range" data-comparison-range type="range" min="0" max="100" value="50" aria-label="Compare {{ before_label }} and {{ after_label }} for {{ comparison.title | default: page.title }}">
+            </div>
+          </figure>
+          {% endfor %}
+        </section>
+        {% endif %}
         {% if page.previous.url %}
         <div class="project__nav">
           <div class="project__prev">

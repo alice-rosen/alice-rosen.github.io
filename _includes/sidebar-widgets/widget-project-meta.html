@@ -24,13 +24,24 @@
   {% if page.article %}
   <div class="project-meta__item">
     <h3 class="project-meta__name">Article</h3>
+    {% if page.article.doi %}
+    {% assign article_doi = page.article.doi %}
+    {% else %}
+    {% assign article_doi = page.article %}
+    {% endif %}
+    {% if page.article.authors %}
     <div class="project-meta__text">
       {{ page.article.authors }} ({{ page.article.year }})<br>
       {{ page.article.journal }}<br>
-      <a href="https://doi.org/{{ page.article.doi }}" target="_blank" rel="noopener noreferrer">
+      <a href="https://doi.org/{{ article_doi }}" target="_blank" rel="noopener noreferrer">
         DOI link
       </a>
     </div>
+    {% else %}
+    <div class="project-meta__text project-citation" data-project-citation data-doi="{{ article_doi | escape }}">
+      <a href="https://doi.org/{{ article_doi }}" target="_blank" rel="noopener noreferrer">{{ article_doi }}</a>
+    </div>
+    {% endif %}
   </div>
   {% endif %}
   {% if page.subtitle %}

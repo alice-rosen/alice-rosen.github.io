@@ -38,7 +38,7 @@ layout: default
           {% assign after_label = comparison.after_label | default: 'After' %}
           <figure class="project-comparison" data-comparison>
             {% if comparison.title %}
-            <figcaption class="project-comparison__title">{{ comparison.title }}</figcaption>
+            <div class="project-comparison__title">{{ comparison.title }}</div>
             {% endif %}
             {% if comparison.package %}
             <div class="project-comparison__package">
@@ -58,6 +58,16 @@ layout: default
               <span class="project-comparison__divider" data-comparison-divider aria-hidden="true"></span>
               <input class="project-comparison__range" data-comparison-range type="range" min="0" max="100" value="50" aria-label="Compare {{ before_label }} and {{ after_label }} for {{ comparison.title | default: page.title }}">
             </div>
+            {% if comparison.caption_title or comparison.caption %}
+            <figcaption class="project-comparison__caption">
+              {% if comparison.caption_title %}
+              <p class="project-comparison__caption-title">Figure {{ forloop.index }}. {{ comparison.caption_title }}</p>
+              {% endif %}
+              {% if comparison.caption %}
+              <div class="project-comparison__caption-text">{{ comparison.caption | markdownify }}</div>
+              {% endif %}
+            </figcaption>
+            {% endif %}
           </figure>
           {% endfor %}
         </section>

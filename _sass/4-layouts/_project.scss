@@ -167,6 +167,26 @@
   box-shadow: 0 8px 28px rgba(0, 0, 0, .08);
 }
 
+.project-comparison__caption {
+  margin-top: 18px;
+  color: var(--text-alt-color);
+}
+
+.project-comparison__caption-title {
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--heading-font-color);
+}
+
+.project-comparison__caption-text {
+  font-size: 15px;
+  line-height: 1.65;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .project-comparison__image {
   display: block;
   width: 100%;

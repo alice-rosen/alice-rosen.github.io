@@ -2,6 +2,7 @@
 title: Drones & robots for biodiversity research
 subtitle: Data Vis
 summary: Figure re-design for a publication in Methods in Ecology and Evolution. Focused on improving readability and giving the figures a cohesive design.
+tools: R, Affinity Designer
 article: 10.1111/2041-210x.70217
 image: '/images/alluvial_plot_after.jpeg'
 comparisons:

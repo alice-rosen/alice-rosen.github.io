@@ -19,5 +19,5 @@ comparisons:
     package: alluvial
     caption_title: Different robots are being used for different kinds of ecological data.
     caption: >-
-      This figure summarises more than 1000 studies to show which sensors are being used on different robotic platforms and in different ecosystems. Drones are especially common for optical remote sensing - collecting visual, multispectral or LiDAR data from above - while ground and underwater robots are often used for more specialised tasks, such as collecting samples or measuring environmental conditions. The figure shows that "robotic biodiversity monitoring" is not one single method, but a growing toolbox of platforms and sensors suited to different ecological questions.
+      This figure summarises more than 1000 studies to show which sensors are being used on different robotic platforms and in different ecosystems. Drones are especially common for optical remote sensing - collecting visual, multispectral or LiDAR data from above - while ground and underwater robots are often used for more specialised tasks, such as collecting samples or measuring environmental conditions.
 ---

@@ -15,6 +15,14 @@
     <div class="project-meta__text">{{ page.tools }}</div>
   </div>
   {% endif %}
+  {% if page.website %}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Website</h3>
+    <div class="project-meta__text">
+      <a href="{{ page.website.url }}" target="_blank" rel="noopener noreferrer">{{ page.website.label | default: 'Visit project website' }}</a>
+    </div>
+  </div>
+  {% endif %}
   {% if page.date %}
   <div class="project-meta__item">
     <h3 class="project-meta__name">Date</h3>

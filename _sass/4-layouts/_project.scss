@@ -113,6 +113,37 @@
   }
 }
 
+.project-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+  margin: 32px 0 48px;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.project-image-grid__item {
+  margin: 0;
+
+  figcaption {
+    margin-bottom: 12px;
+    font-family: $heading-font-family;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--heading-font-color);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* Before and After Comparisons */
 .project-comparisons {
   display: grid;

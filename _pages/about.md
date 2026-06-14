@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
-hide_title: true
 # Add affiliation logos to the images folder, then list them here:
 # affiliations:
 #   - name: Institution name
@@ -20,35 +19,8 @@ affiliations:
   logo: /images/forest_research_logo.jpeg
 ---
 
-<div class="about-intro">
-  <section class="about-profile">
-    <div class="about-profile__portrait">
-      <img src="{{ '/images/alice_rosen_photo.jpeg' | relative_url }}" alt="Portrait of Alice Rosen">
-    </div>
-    <div class="about-profile__details">
-      <h2 class="about-profile__name">Alice Rosen</h2>
-      <p class="about-profile__pronouns">she/her</p>
-      <p class="about-profile__role">PhD student</p>
-      <p class="about-profile__email">alice[at]rosen.org.uk</p>
-      <p class="about-profile__email">alice.rosen[at]biology.ox.ac.uk</p>
-    </div>
-  </section>
+I'm a PhD student at the University of Oxford, funded by the [Interdisciplinary Bioscience Doctoral Training Partnership](https://www.biodtp.ox.ac.uk/home) and working in collaboration with [Forest Research](https://www.forestresearch.gov.uk/). My research explores how forests respond to climate extremes such as drought. I'm especially interested in how forest structure **–** from the size and shape of individual trees to the wider structure of forest communities **–** can influence drought resilience. I work with remote sensing data, including multispectral satellite imagery and airborne LiDAR, alongside dendrometer data, forest inventories, and ecological modelling.
 
-  <section class="about-bio">
-    <h2>About me</h2>
-    <p>Add a description about yourself here.</p>
-  </section>
-</div>
+Before starting my PhD, I completed a Master's by Research at the University of Bristol, where I [studied how tropical forests recover structurally after disturbance](https://doi.org/10.1111/ecog.07377). Before that, I worked for several years as a scientific illustrator, creating designs for scientific and educational publications as well as [traditional natural history illustrations]({{ '/art/' \| relative_url }}) using watercolour, gouache, and ink.
 
-{% if page.affiliations.size > 0 %}
-<section class="about-affiliations">
-  <h2>Affiliations</h2>
-  <div class="about-affiliations__grid">
-    {% for affiliation in page.affiliations %}
-    {% if affiliation.url %}<a class="about-affiliation" href="{{ affiliation.url }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="about-affiliation">{% endif %}
-      <img src="{{ affiliation.logo | relative_url }}" alt="{{ affiliation.name }} logo">
-    {% if affiliation.url %}</a>{% else %}</div>{% endif %}
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
+I'm drawn to projects that bring together science, design, and communication, from Earth observation and ecological modelling to cartography, data visualisation, and scientific illustration.

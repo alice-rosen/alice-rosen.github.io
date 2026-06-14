@@ -144,6 +144,16 @@
   }
 }
 
+.project-figure {
+  margin: 32px 0 56px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* Before and After Comparisons */
 .project-comparisons {
   display: grid;

@@ -61,7 +61,9 @@ layout: default
             {% if comparison.caption_title or comparison.caption %}
             <figcaption class="project-comparison__caption">
               {% if comparison.caption_title %}
-              <p class="project-comparison__caption-title">Figure {{ forloop.index }}. {{ comparison.caption_title }}</p>
+              {% assign comparison_figure_offset = page.comparison_figure_offset | default: 0 %}
+              {% assign figure_number = forloop.index | plus: comparison_figure_offset %}
+              <p class="project-comparison__caption-title">Figure {{ figure_number }}. {{ comparison.caption_title }}</p>
               {% endif %}
               {% if comparison.caption %}
               <div class="project-comparison__caption-text">{{ comparison.caption | markdownify }}</div>

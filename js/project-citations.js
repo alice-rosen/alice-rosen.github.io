@@ -2,8 +2,10 @@
   "use strict";
 
   var citations = document.querySelectorAll("[data-project-citation]");
+  var attributions = document.querySelectorAll("[data-project-attribution]");
+  var requests = {};
 
-  if (!citations.length) {
+  if (!citations.length && !attributions.length) {
     return;
   }
 
@@ -55,11 +57,44 @@
     container.appendChild(link);
   }
 
-  citations.forEach(function (container) {
-    var doi = container.dataset.doi.trim().replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
+  function renderAttribution(container, message, doi) {
+    var authorCount = message.author ? message.author.length : 0;
+    var author = container.dataset.authors || firstAuthor(message) + (authorCount > 1 ? " et al." : "");
+    var year = container.dataset.year || yearFor(message);
+    var journal = container.dataset.journal || (message["container-title"] && message["container-title"][0]
+      ? message["container-title"][0]
+      : "");
+    var license = container.dataset.license || "Creative Commons";
+    var creator = container.dataset.creator || "Alice Rosen";
+    var link = document.createElement("a");
+
+    container.textContent = "";
+    text(container, "Figure reproduced from " + author + (year ? " " + year : ""));
+    if (journal) {
+      text(container, ", ");
+      var journalElement = document.createElement("em");
+      text(journalElement, journal);
+      container.appendChild(journalElement);
+    }
+    text(container, ", under a " + license + " licence. Figure created by " + creator + ". ");
+
+    link.href = "https://doi.org/" + doi;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    text(link, doi);
+    container.appendChild(link);
+    text(container, ".");
+  }
+
+  function normalizeDoi(value) {
+    return value.trim().replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
+  }
+
+  function fetchWork(doi) {
     var url = "https://api.crossref.org/works/" + encodeURIComponent(doi);
 
-    fetch(url)
+    if (!requests[doi]) {
+      requests[doi] = fetch(url)
       .then(function (response) {
         if (!response.ok) {
           throw new Error("Crossref request failed");
@@ -67,7 +102,31 @@
         return response.json();
       })
       .then(function (data) {
-        renderCitation(container, data.message, doi);
+        return data.message;
+      });
+    }
+
+    return requests[doi];
+  }
+
+  citations.forEach(function (container) {
+    var doi = normalizeDoi(container.dataset.doi);
+
+    fetchWork(doi)
+      .then(function (message) {
+        renderCitation(container, message, doi);
+      })
+      .catch(function () {
+        // The DOI link already in the page remains usable when metadata is unavailable.
+      });
+  });
+
+  attributions.forEach(function (container) {
+    var doi = normalizeDoi(container.dataset.doi);
+
+    fetchWork(doi)
+      .then(function (message) {
+        renderAttribution(container, message, doi);
       })
       .catch(function () {
         // The DOI link already in the page remains usable when metadata is unavailable.

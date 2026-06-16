@@ -3,6 +3,7 @@ layout: default
 ---
 
 <div class="container">
+  {% include project-article-vars.html %}
 
   <div class="project-info">
     {% if page.subtitle %}
@@ -58,15 +59,20 @@ layout: default
               <span class="project-comparison__divider" data-comparison-divider aria-hidden="true"></span>
               <input class="project-comparison__range" data-comparison-range type="range" min="0" max="100" value="50" aria-label="Compare {{ before_label }} and {{ after_label }} for {{ comparison.title | default: page.title }}">
             </div>
-            {% if comparison.caption_title or comparison.caption %}
+            {% if comparison.caption_title or comparison.caption or comparison.attribution or comparison.attribution_license %}
             <figcaption class="project-comparison__caption">
               {% if comparison.caption_title %}
-              {% assign comparison_figure_offset = page.comparison_figure_offset | default: 0 %}
-              {% assign figure_number = forloop.index | plus: comparison_figure_offset %}
-              <p class="project-comparison__caption-title">Figure {{ figure_number }}. {{ comparison.caption_title }}</p>
+              <p class="project-comparison__caption-title">{{ comparison.caption_title }}</p>
               {% endif %}
               {% if comparison.caption %}
               <div class="project-comparison__caption-text">{{ comparison.caption | markdownify }}</div>
+              {% endif %}
+              {% if comparison.attribution %}
+              <div class="project-comparison__attribution">{{ comparison.attribution | markdownify }}</div>
+              {% elsif comparison.attribution_license and article_doi %}
+              <div class="project-comparison__attribution" data-project-attribution data-doi="{{ article_doi | escape }}" data-license="{{ comparison.attribution_license | escape }}" data-creator="{{ comparison.figure_creator | default: page.figure_creator | default: 'Alice Rosen' | escape }}"{% if article_authors %} data-authors="{{ article_authors | escape }}"{% endif %}{% if article_year %} data-year="{{ article_year | escape }}"{% endif %}{% if article_journal %} data-journal="{{ article_journal | escape }}"{% endif %}>
+                Figure reproduced from {% if article_authors %}{{ article_authors }}{% if article_year %} {{ article_year }}{% endif %}{% if article_journal %}, <em>{{ article_journal }}</em>{% endif %}, under a {{ comparison.attribution_license }} licence. Figure created by {{ comparison.figure_creator | default: page.figure_creator | default: 'Alice Rosen' }}. <a href="https://doi.org/{{ article_doi }}" target="_blank" rel="noopener noreferrer">{{ article_doi }}</a>.{% else %}<a href="https://doi.org/{{ article_doi }}" target="_blank" rel="noopener noreferrer">{{ article_doi }}</a>. Figure created by {{ comparison.figure_creator | default: page.figure_creator | default: 'Alice Rosen' }}.{% endif %}
+              </div>
               {% endif %}
             </figcaption>
             {% endif %}

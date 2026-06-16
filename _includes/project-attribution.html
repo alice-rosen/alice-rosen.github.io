@@ -1,0 +1,6 @@
+{% include project-article-vars.html %}
+{% if article_doi %}
+<div class="project-comparison__attribution" data-project-attribution data-doi="{{ article_doi | escape }}" data-license="{{ include.license | escape }}" data-creator="{{ include.creator | default: page.figure_creator | default: 'Alice Rosen' | escape }}"{% if article_authors %} data-authors="{{ article_authors | escape }}"{% endif %}{% if article_year %} data-year="{{ article_year | escape }}"{% endif %}{% if article_journal %} data-journal="{{ article_journal | escape }}"{% endif %}>
+  Figure reproduced from {% if article_authors %}{{ article_authors }}{% if article_year %} {{ article_year }}{% endif %}{% if article_journal %}, <em>{{ article_journal }}</em>{% endif %}, under a {{ include.license }} licence. Figure created by {{ include.creator | default: page.figure_creator | default: 'Alice Rosen' }}. <a href="https://doi.org/{{ article_doi }}" target="_blank" rel="noopener noreferrer">{{ article_doi }}</a>.{% else %}<a href="https://doi.org/{{ article_doi }}" target="_blank" rel="noopener noreferrer">{{ article_doi }}</a>. Figure created by {{ include.creator | default: page.figure_creator | default: 'Alice Rosen' }}.{% endif %}
+</div>
+{% endif %}

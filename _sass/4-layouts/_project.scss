@@ -228,6 +228,27 @@
   }
 }
 
+.project-comparison__attribution {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-alt-color);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: inherit;
+    border-bottom-color: var(--border-color);
+
+    &:hover {
+      color: var(--link-color);
+      border-bottom-color: var(--link-color-hover);
+    }
+  }
+}
+
 .project-comparison__image {
   display: block;
   width: 100%;

@@ -1,0 +1,17 @@
+{% assign article_doi = nil %}
+{% assign article_authors = nil %}
+{% assign article_year = nil %}
+{% assign article_journal = nil %}
+{% assign article_title = nil %}
+{% if page.article %}
+{% if page.article.doi %}
+{% assign article_doi = page.article.doi %}
+{% assign article_authors = page.article.authors %}
+{% assign article_year = page.article.year %}
+{% assign article_journal = page.article.journal %}
+{% assign article_title = page.article.title %}
+{% else %}
+{% assign article_doi = page.article %}
+{% endif %}
+{% assign article_doi = article_doi | replace: 'https://doi.org/', '' | replace: 'http://doi.org/', '' | replace: 'https://dx.doi.org/', '' | replace: 'http://dx.doi.org/', '' | replace: 'https://doi.org/', '' | replace: 'http://doi.org/', '' %}
+{% endif %}

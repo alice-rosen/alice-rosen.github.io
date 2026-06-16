@@ -13,10 +13,13 @@ affiliations:
   url: https://www.biology.ox.ac.uk/people/alice-rosen
 - name: SalGo Team
   logo: /images/salgo_team_logo.jpeg
+  url: https://www.salgo.ox.ac.uk/
 - name: Selva Lab
   logo: /images/selva_lab_logo.jpeg
+  url: https://www.selvalab.org/
 - name: Forest Research
   logo: /images/forest_research_logo.jpeg
+  url: https://www.forestresearch.gov.uk/
 ---
 
 I'm a PhD student at the University of Oxford, funded by the [Interdisciplinary Bioscience Doctoral Training Partnership](https://www.biodtp.ox.ac.uk/home) and working in collaboration with [Forest Research](https://www.forestresearch.gov.uk/). My research explores how forests respond to climate extremes such as drought. I'm especially interested in how forest structure **–** from the size and shape of individual trees to the wider structure of forest communities **–** can influence drought resilience. I work with remote sensing data, including multispectral satellite imagery and airborne LiDAR, alongside dendrometer data, forest inventories, and ecological modelling.

@@ -43,6 +43,9 @@ image:
           <div class="project__head">
             <div class="project__image">
               <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+              {% if project.featured_label %}
+              <span class="project__badge">{{ project.featured_label }}</span>
+              {% endif %}
             </div>
           </div>
           {% endif %}
@@ -57,6 +60,9 @@ image:
             </h3>
             {% if project.summary %}
             <p class="project__excerpt">{{ project.summary }}</p>
+            {% endif %}
+            {% if project.featured_note %}
+            <p class="project__feature-note">{{ project.featured_note }}</p>
             {% endif %}
           </div>
         </div>

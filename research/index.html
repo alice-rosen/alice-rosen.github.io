@@ -6,10 +6,10 @@ permalink: /science/
 
 <div class="page-wrapper research-page">
   <div class="container animate">
-    {% assign sorted_research = site.research | sort: 'date' | reverse %}
-    {% if sorted_research.size > 0 %}
+    {% assign research_projects = site.projects | where: 'subtitle', 'Research' | sort: 'date' | reverse %}
+    {% if research_projects.size > 0 %}
     <div class="row">
-      {% for project in sorted_research %}
+      {% for project in research_projects %}
       <article class="project col col-4 col-w-6 col-t-12">
         <div class="project__content">
           {% if project.image %}

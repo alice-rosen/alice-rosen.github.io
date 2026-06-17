@@ -44,9 +44,19 @@
   {% endif %}
   {% if page.subtitle %}
   {% assign project_label = page.subtitle | slugify %}
+  {% case project_label %}
+    {% when 'figure-design', 'logo', 'infographic', 'illustration' %}
+      {% assign project_filter_label = 'design' %}
+    {% when 'data-vis', 'cartography' %}
+      {% assign project_filter_label = 'data' %}
+    {% else %}
+      {% assign project_filter_label = project_label %}
+  {% endcase %}
   {% capture project_label_plural %}
     {% case project_label %}
       {% when 'infographic' %}infographics
+      {% when 'figure-design' %}figure design projects
+      {% when 'logo' %}logo projects
       {% when 'cartography' %}cartography projects
       {% when 'data-vis' %}data visualisations
       {% when 'research' %}research projects
@@ -54,6 +64,6 @@
       {% else %}{{ page.subtitle | downcase }} projects
     {% endcase %}
   {% endcapture %}
-  <a class="project-meta__more" href="{{ '/projects/' | relative_url }}?label={{ project_label }}">See other {{ project_label_plural | strip }}</a>
+  <a class="project-meta__more" href="{{ '/projects/' | relative_url }}?label={{ project_filter_label }}">See other {{ project_label_plural | strip }}</a>
   {% endif %}
 </div>

@@ -20,7 +20,9 @@
     var visibleCount = 0;
 
     Array.prototype.forEach.call(projects, function (project) {
-      var visible = activeLabel === "all" || project.dataset.projectLabel === activeLabel;
+      var visible = activeLabel === "all" ||
+        project.dataset.projectFilterGroup === activeLabel ||
+        project.dataset.projectLabel === activeLabel;
       project.hidden = !visible;
       if (visible) {
         visibleCount += 1;

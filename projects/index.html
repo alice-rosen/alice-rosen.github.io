@@ -19,10 +19,8 @@ image:
   <div class="container animate">
     <nav class="project-filters" aria-label="Filter projects by type">
       <a class="project-filter is-active" href="{{ '/projects/' | relative_url }}" data-project-filter="all" aria-current="page">All</a>
-      <a class="project-filter" href="{{ '/projects/?label=cartography' | relative_url }}" data-project-filter="cartography">Cartography</a>
-      <a class="project-filter" href="{{ '/projects/?label=data-vis' | relative_url }}" data-project-filter="data-vis">Data Vis</a>
-      <a class="project-filter" href="{{ '/projects/?label=illustration' | relative_url }}" data-project-filter="illustration">Illustrations</a>
-      <a class="project-filter" href="{{ '/projects/?label=infographic' | relative_url }}" data-project-filter="infographic">Infographics</a>
+      <a class="project-filter" href="{{ '/projects/?label=design' | relative_url }}" data-project-filter="design" data-project-filter-labels="figure-design logo infographic illustration">Illustration & Design</a>
+      <a class="project-filter" href="{{ '/projects/?label=data' | relative_url }}" data-project-filter="data" data-project-filter-labels="data-vis cartography">Data Vis & Cartography</a>
       <a class="project-filter" href="{{ '/projects/?label=research' | relative_url }}" data-project-filter="research">Research</a>
     </nav>
 
@@ -30,7 +28,16 @@ image:
 
     <div class="row">
       {% for project in site.projects reversed %}
-      <article class="project col col-4 col-w-6 col-t-12" data-project-label="{{ project.subtitle | slugify }}">
+      {% assign project_label = project.subtitle | slugify %}
+      {% case project_label %}
+        {% when 'figure-design', 'logo', 'infographic', 'illustration' %}
+          {% assign project_filter_group = 'design' %}
+        {% when 'data-vis', 'cartography' %}
+          {% assign project_filter_group = 'data' %}
+        {% else %}
+          {% assign project_filter_group = project_label %}
+      {% endcase %}
+      <article class="project col col-4 col-w-6 col-t-12" data-project-label="{{ project_label }}" data-project-filter-group="{{ project_filter_group }}">
         <div class="project__content">
           {% if project.image %}
           <div class="project__head">

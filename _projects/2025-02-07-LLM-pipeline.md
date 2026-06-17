@@ -1,6 +1,6 @@
 ---
 title: AI-assisted literature reviews
-subtitle: Infographic
+subtitle: Figure Design
 summary: A graphic created to accompany a pratical workflow for LLM-powered literature reviews. In this case, the structure and content had already been decided; my role was to turn the workflow into a clear and visually engaging figure.
 tools: Affinity Designer
 article:

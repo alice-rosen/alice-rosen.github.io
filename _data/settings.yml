@@ -42,16 +42,6 @@ social:
 
 
 #-------------------------------
-# Hero Settings
-hero:
-  enable: false
-  hero_title: Data Viz Portfolio # Add the "span" tag to highlight text. E.g. <span><i>highlighted text</i></span>
-  hero_description: I’m Alice, a PhD student at the University of Oxford. I like trees, data and maps.
-  hero_image:
-  hero_button_about: About Me
-
-
-#-------------------------------
 # Projects Settings
 section_projects_title: Recent projects
 

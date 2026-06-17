@@ -54,3 +54,11 @@
     }
   }
 }
+
+.content > .projects:first-child {
+  margin-top: 24px;
+
+  @media (max-width: $mobile) {
+    margin-top: 24px;
+  }
+}

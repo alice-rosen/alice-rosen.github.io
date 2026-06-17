@@ -24,6 +24,20 @@
   }
 }
 
+.home-page {
+  .header {
+    margin-bottom: 20px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: $mobile) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
 /* Logo */
 .logo__link {
   font-family: $heading-font-family;
@@ -55,13 +69,17 @@
 
 /* Nav */
 .main-nav {
+  position: absolute;
+  left: 50%;
   display: flex;
   align-items: center;
+  transform: translateX(-50%);
 
   @media (max-width: $desktop) {
     position: absolute;
     top: 48px;
     right: $base-spacing-unit;
+    left: auto;
     z-index: -1;
     display: block;
     min-width: 160px;

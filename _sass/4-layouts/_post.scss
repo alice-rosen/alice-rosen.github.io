@@ -661,6 +661,10 @@ a.about-timeline__type {
     }
   }
 
+  .about-timeline__item--top {
+    display: none;
+  }
+
   .about-timeline__item--top,
   .about-timeline__item--bottom {
     .about-timeline__card {

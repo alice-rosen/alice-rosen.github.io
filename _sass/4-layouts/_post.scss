@@ -312,7 +312,12 @@
   margin-bottom: 28px;
 
   h2 {
+    margin-bottom: 8px;
+  }
+
+  p {
     margin-bottom: 0;
+    color: var(--text-alt-color);
   }
 }
 
@@ -647,7 +652,7 @@ a.about-timeline__type {
 
     &::before {
       top: 24px;
-      left: -24px;
+      left: -17px;
       bottom: auto;
     }
 

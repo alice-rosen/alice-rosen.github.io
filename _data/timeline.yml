@@ -1,0 +1,127 @@
+- date: "2016"
+  lane: "top"
+  type: "Award"
+  description: "Highest grade in year-group for research dissertation (84%)"
+
+- date: "2013-2016"
+  lane: "bottom"
+  type: "Education"
+  title: "BSc Zoology at the University of Exeter"
+  description: "Built a foundation in ecology, evolution, and quantitative biology. Received 1st Class Honours."
+  skills:
+    - Ecology
+    - Evolution
+    - Quantitative biology
+
+- date: "2017"
+  lane: "top"
+  type: "Teaching"
+  description: "Postgraduate certificate in Learning and Teaching in Higher Education (Level 1 & 2)"
+
+- date: "2017"
+  lane: "top"
+  type: "Award"
+  description: "Prize for best conference presentation"
+
+- date: "2017-2020"
+  lane: "bottom"
+  type: "Design"
+  title: "Scientific & natural history illustration"
+  description: "Created traditional natural history illustrations and designs for scientific, commercial, and educational projects."
+  skills:
+    - Watercolour
+    - Pen & ink
+    - Digital illustration
+    - SciComm
+  link:
+    label: "Browse art"
+    url: "/art/"
+
+- date: "2019"
+  lane: "top"
+  type: "Teaching"
+  description: "Teaching award for online art workshops"
+
+- date: "2021-2022"
+  lane: "bottom"
+  type: "Research"
+  title: "Masters by Research at the University of Bristol"
+  description: "Research project on tropical forest canopy structure changes after logging and restoration using repeat airborne lidar."
+  skills:
+    - Remote sensing
+    - Lidar
+    - R
+    - QGIS
+    - Forest ecology
+  link:
+    label: "View project"
+    url: "/project/forest-structural-complexity-borneo/"
+
+- date: "2022"
+  lane: "top"
+  type: "Award"
+  description: "Faculty prize for outstanding excellence in an MScR thesis"
+
+- date: "2022-present"
+  lane: "bottom"
+  type: "Research"
+  title: "PhD at the University of Oxford"
+  description: "Researching how forest structure shapes drought resilience."
+  skills:
+    - Earth observation
+    - R
+    - Python
+    - QGIS
+    - Google Earth Engine
+    - GitHub
+    - Forest ecology
+    - Ecological modelling
+    - Statistical analysis
+    - Data vis
+
+- date: "2024"
+  lane: "top"
+  type: "Publication"
+  description: "Tracking shifts in forest structural complexity through space and time in human‐modified tropical landscapes"
+  link:
+    label: "View project"
+    url: "/project/forest-structural-complexity-borneo/"
+
+- date: "2024"
+  lane: "top"
+  type: "Award"
+  description: "Best seminar at the Biology Graduate Symposium"
+
+- date: "2026"
+  lane: "top"
+  type: "Publication"
+  description: "Modelling forest dynamics using integral projection models and repeat lidar"
+  link:
+    label: "View project"
+    url: "/project/forest-dynamics-repeat-lidar/"
+
+- date: "2025-2026"
+  lane: "bottom"
+  type: "Internship"
+  title: "Geospatial Analysis at Langland Conservation"
+  description: "Geospatial analysis, cartography, and data visualisation to support conservation intelligence and decision-making."
+  skills:
+    - R
+    - Data vis
+    - Cartography
+    - Google Earth Engine
+    - QGIS
+    - ArcGIS
+
+- date: "2025-present"
+  lane: "bottom"
+  type: "Internship"
+  title: "Data Science at Gentian"
+  description: "Internship and continued part-time work in geospatial data science and design."
+  skills:
+    - Machine learning
+    - Python
+    - Habitat mapping
+    - AWS
+    - Google Earth Engine
+    - GitHub

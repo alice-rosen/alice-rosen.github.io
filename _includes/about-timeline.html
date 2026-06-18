@@ -1,0 +1,222 @@
+{% if site.data.timeline.size > 0 %}
+<section class="about-timeline" aria-labelledby="about-timeline-title">
+  <div class="about-timeline__intro">
+    <h2 id="about-timeline-title">Career &amp; skills journal</h2>
+    <p>A few milestones from my research and design experience, and the tools I have picked up along the way.</p>
+  </div>
+
+  <div class="about-timeline__scroller" aria-label="Career and skills timeline">
+    <ol class="about-timeline__list">
+      {% for item in site.data.timeline %}
+      {% assign timeline_lane = item.lane | default: 'bottom' %}
+      {% assign timeline_type_class = item.type | slugify %}
+      <li class="about-timeline__item about-timeline__item--{{ timeline_lane }}" data-lane="{{ timeline_lane }}" data-date="{{ item.date | escape }}" data-title="{{ item.title | default: item.description | escape }}">
+        <article class="about-timeline__card">
+          <div class="about-timeline__meta">
+            <span class="about-timeline__date">{{ item.date }}</span>
+            {% if timeline_lane == 'top' and timeline_type_class == 'publication' and item.link.url %}
+            <a class="about-timeline__type about-timeline__type--{{ timeline_type_class }}" href="{{ item.link.url | relative_url }}">{{ item.type }}</a>
+            {% else %}
+            <span class="about-timeline__type about-timeline__type--{{ timeline_type_class }}">{{ item.type }}</span>
+            {% endif %}
+          </div>
+
+          {% if timeline_lane == 'top' %}
+          <p>{{ item.description }}</p>
+          {% else %}
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+
+          {% if item.skills %}
+          <ul class="about-timeline__skills list-reset">
+            {% for skill in item.skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if item.link.url %}
+          <a class="about-timeline__link" href="{{ item.link.url | relative_url }}">{{ item.link.label }}</a>
+          {% endif %}
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const timeline = document.querySelector('.about-timeline__list');
+    if (!timeline) return;
+
+    const scroller = timeline.closest('.about-timeline__scroller');
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const bottomItems = Array.from(timeline.querySelectorAll('.about-timeline__item--bottom'));
+    const topItems = Array.from(timeline.querySelectorAll('.about-timeline__item--top'));
+    const cardWidth = 290;
+    const bottomCardGap = 28;
+    const sidePadding = 24;
+    const topCardWidth = 190;
+    const topCardGap = 18;
+    const connectorGap = 36;
+    let hasCenteredInitialCard = false;
+
+    function yearsFromDate(value) {
+      const years = String(value).match(/\d{4}/g) || [];
+      const start = years[0] ? parseInt(years[0], 10) : new Date().getFullYear();
+      const end = years[1] ? parseInt(years[1], 10) : (String(value).includes('present') ? new Date().getFullYear() : start);
+      return { start, end };
+    }
+
+    function resetInlineStyles(items) {
+      items.forEach((item) => {
+        item.style.left = '';
+        item.style.top = '';
+        item.style.width = '';
+        item.style.height = '';
+      });
+    }
+
+    function layoutTimeline() {
+      if (mediaQuery.matches) {
+        resetInlineStyles(bottomItems.concat(topItems));
+        timeline.style.minWidth = '';
+        timeline.style.minHeight = '';
+        timeline.style.setProperty('--timeline-axis-y', '');
+        return;
+      }
+
+      if (!bottomItems.length) return;
+
+      const groups = Array.from({ length: bottomItems.length + 1 }, () => []);
+      let currentGroup = 0;
+
+      Array.from(timeline.children).forEach((item) => {
+        if (item.dataset.lane === 'bottom') {
+          currentGroup += 1;
+          return;
+        }
+
+        if (item.dataset.lane === 'top') {
+          groups[currentGroup].push(item);
+        }
+      });
+
+      function groupWidth(items) {
+        if (!items.length) return 0;
+        return items.length * topCardWidth + (items.length - 1) * topCardGap;
+      }
+
+      const bottomCenters = [];
+      let nextCenter = sidePadding + cardWidth / 2;
+
+      bottomItems.forEach((item, index) => {
+        bottomCenters.push(nextCenter);
+
+        const nextGroup = groups[index + 1] || [];
+        const topWidth = groupWidth(nextGroup);
+        const minimumCenterGap = cardWidth + bottomCardGap;
+        const expandedCenterGap = topWidth ? topWidth + topCardGap : minimumCenterGap;
+        nextCenter += Math.max(minimumCenterGap, expandedCenterGap);
+      });
+
+      const bottomMeta = bottomItems.map((item, index) => {
+        const years = yearsFromDate(item.dataset.date);
+        const center = bottomCenters[index];
+        const left = center - cardWidth / 2;
+        item.style.left = center + 'px';
+        return { item, index, left, right: left + cardWidth, center, ...years };
+      });
+
+      const topPlacements = [];
+      let minTopX = sidePadding;
+      let maxTopX = bottomMeta[bottomMeta.length - 1].right;
+
+      groups.forEach((items, groupIndex) => {
+        if (!items.length) return;
+
+        const prevPeriod = bottomMeta[groupIndex - 1];
+        const nextPeriod = bottomMeta[groupIndex];
+        const totalWidth = groupWidth(items);
+        let startX;
+
+        if (prevPeriod && nextPeriod) {
+          const anchorCenter = (prevPeriod.center + nextPeriod.center) / 2;
+          startX = anchorCenter - totalWidth / 2 + topCardWidth / 2;
+        } else if (prevPeriod) {
+          startX = prevPeriod.center - totalWidth / 2 + topCardWidth / 2;
+        } else {
+          startX = nextPeriod.center - totalWidth / 2 + topCardWidth / 2;
+        }
+
+        items.forEach((item, index) => {
+          const x = startX + index * (topCardWidth + topCardGap);
+          topPlacements.push({ item, x });
+        });
+      });
+
+      topPlacements.forEach((placement, index) => {
+        if (index === 0) return;
+
+        const previous = topPlacements[index - 1];
+        const minX = previous.x + topCardWidth + topCardGap;
+        if (placement.x < minX) placement.x = minX;
+      });
+
+      topPlacements.forEach(({ x }) => {
+        minTopX = Math.min(minTopX, x - topCardWidth / 2);
+        maxTopX = Math.max(maxTopX, x + topCardWidth / 2);
+      });
+
+      const shiftX = minTopX < sidePadding ? sidePadding - minTopX : 0;
+      const timelineWidth = Math.max(760, maxTopX + shiftX + sidePadding);
+
+      bottomMeta.forEach((meta) => {
+        meta.item.style.left = (meta.center + shiftX) + 'px';
+      });
+
+      const topCardHeight = Math.max(0, ...topItems.map((item) => {
+        const card = item.querySelector('.about-timeline__card');
+        return card ? card.offsetHeight : 0;
+      }));
+      const topLaneHeight = Math.max(152, topCardHeight + connectorGap);
+      const axisY = topLaneHeight;
+      const bottomTop = axisY;
+      const bottomHeight = 360;
+
+      bottomItems.forEach((item) => {
+        item.style.top = bottomTop + 'px';
+      });
+
+      topPlacements.forEach(({ item, x }) => {
+        const card = item.querySelector('.about-timeline__card');
+        const itemCardHeight = card ? card.offsetHeight : topCardHeight;
+        const top = Math.max(0, axisY - connectorGap - itemCardHeight);
+        item.style.left = (x + shiftX) + 'px';
+        item.style.top = top + 'px';
+        item.style.height = (axisY - top) + 'px';
+      });
+
+      timeline.style.minWidth = timelineWidth + 'px';
+      timeline.style.minHeight = (axisY + bottomHeight + 96) + 'px';
+      timeline.style.setProperty('--timeline-axis-y', axisY + 'px');
+
+      if (!hasCenteredInitialCard && scroller) {
+        const targetItem = bottomItems.find((item) => item.dataset.title && item.dataset.title.toLowerCase().includes('phd'));
+        const targetCard = targetItem ? targetItem.querySelector('.about-timeline__card') : null;
+
+        if (targetCard) {
+          const cardCenter = targetItem.offsetLeft;
+          scroller.scrollLeft = Math.max(0, cardCenter - scroller.clientWidth / 2);
+          hasCenteredInitialCard = true;
+        }
+      }
+    }
+
+    layoutTimeline();
+    window.addEventListener('resize', layoutTimeline);
+  }());
+</script>
+{% endif %}

@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="container">
-  <article class="page">
+  <article class="page about-page">
     <div class="page__content">
       <div class="about-intro">
         <section class="about-profile">
@@ -24,6 +24,8 @@ layout: default
           {{ content }}
         </section>
       </div>
+
+      {% include about-timeline.html %}
 
       {% if page.affiliations.size > 0 %}
       <section class="about-affiliations">

@@ -1,11 +1,19 @@
 /* Social */
 .social-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
   @media (max-width: $desktop) {
     display: none;
   }
 }
 
 .social-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-left: -4px;
 }
 
@@ -33,6 +41,26 @@
   color: var(--heading-font-color);
 
   &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.social__email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 9px 16px;
+  border: 1px solid var(--heading-font-color);
+  border-radius: 60px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--heading-font-color);
+  text-decoration: none;
+  transition: all .2s ease;
+
+  &:hover {
+    border-color: var(--primary-color);
     color: var(--primary-color);
   }
 }

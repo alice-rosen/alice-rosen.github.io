@@ -53,6 +53,9 @@
             </li>
             {% endfor %}
           </ul>
+          {% if site.data.settings.contact.email %}
+          <a class="social__email" href="mailto:{{ site.data.settings.contact.email }}">Email me</a>
+          {% endif %}
         </div>
         {% endif %}
 

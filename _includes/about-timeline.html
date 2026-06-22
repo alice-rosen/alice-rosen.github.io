@@ -10,15 +10,19 @@
       {% for item in site.data.timeline %}
       {% assign timeline_lane = item.lane | default: 'bottom' %}
       {% assign timeline_type_class = item.type | slugify %}
+      {% assign timeline_card_is_link = false %}
+      {% if timeline_lane == 'top' and timeline_type_class == 'publication' and item.link.url %}
+      {% assign timeline_card_is_link = true %}
+      {% endif %}
       <li class="about-timeline__item about-timeline__item--{{ timeline_lane }}" data-lane="{{ timeline_lane }}" data-date="{{ item.date | escape }}" data-title="{{ item.title | default: item.description | escape }}">
+        {% if timeline_card_is_link %}
+        <a class="about-timeline__card about-timeline__card--link" href="{{ item.link.url | relative_url }}" aria-label="{{ item.description | escape }}">
+        {% else %}
         <article class="about-timeline__card">
+        {% endif %}
           <div class="about-timeline__meta">
             <span class="about-timeline__date">{{ item.date }}</span>
-            {% if timeline_lane == 'top' and timeline_type_class == 'publication' and item.link.url %}
-            <a class="about-timeline__type about-timeline__type--{{ timeline_type_class }}" href="{{ item.link.url | relative_url }}">{{ item.type }}</a>
-            {% else %}
             <span class="about-timeline__type about-timeline__type--{{ timeline_type_class }}">{{ item.type }}</span>
-            {% endif %}
           </div>
 
           {% if timeline_lane == 'top' %}
@@ -39,7 +43,11 @@
           <a class="about-timeline__link" href="{{ item.link.url | relative_url }}">{{ item.link.label }}</a>
           {% endif %}
           {% endif %}
+        {% if timeline_card_is_link %}
+        </a>
+        {% else %}
         </article>
+        {% endif %}
       </li>
       {% endfor %}
     </ol>

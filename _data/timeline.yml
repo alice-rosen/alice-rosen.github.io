@@ -55,7 +55,7 @@
     - Forest ecology
   link:
     label: "View project"
-    url: "/project/forest-structural-complexity-borneo/"
+    url: "/project/forest-structural-complexity-borneo"
 
 - date: "2022"
   lane: "top"
@@ -85,7 +85,7 @@
   description: "Tracking shifts in forest structural complexity through space and time in human‐modified tropical landscapes"
   link:
     label: "View project"
-    url: "/project/forest-structural-complexity-borneo/"
+    url: "/project/forest-structural-complexity-borneo"
 
 - date: "2024"
   lane: "top"
@@ -98,7 +98,7 @@
   description: "Modelling forest dynamics using integral projection models and repeat lidar"
   link:
     label: "View project"
-    url: "/project/forest-dynamics-repeat-lidar/"
+    url: "/project/forest-dynamics-repeat-lidar"
 
 - date: "2025-2026"
   lane: "bottom"

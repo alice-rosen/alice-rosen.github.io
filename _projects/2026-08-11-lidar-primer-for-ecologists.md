@@ -1,7 +1,7 @@
 ---
 title: Introduction to lidar for ecologists
 subtitle: Figure Design
-summary: Figure design for a paper introducing ecologists to forest structure measurement with lidar. The figure explains how lidar data can be shown as point clouds or waveforms, how it can be turned into canopy, ground height, and tree structure products, and which lidar platforms are commonly used to measure forest structure at different scales.
+summary: Figure design for a paper introducing ecologists to forest structure measurement with lidar. The figure shows how lidar data can be represented as point clouds or waveforms, how it can be turned into canopy, ground height, and tree structure products, and which lidar platforms are commonly used to measure forest structure at different scales.
 tools: Affinity Designer
 article:
   doi: 10.1002/ecs2.70730

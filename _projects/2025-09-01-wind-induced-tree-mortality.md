@@ -3,7 +3,7 @@ title: Wind-induced tree mortality
 subtitle: Figure Design
 summary: Figure design for a grant proposal on wind-induced tree mortality and forest responses to climate change.
 tools: Affinity Designer
-client: Toby Jackson
+client: Toby Jackson, University of Bristol
 website:
   label: See more of Toby's research
   url: https://scholar.google.com/citations?user=iqcKPKYAAAAJ&hl=en

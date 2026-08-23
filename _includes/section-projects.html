@@ -16,8 +16,9 @@
           {% endif %}
 
           <div class="row">
-            {% assign sorted = site.projects | sort: 'date' | reverse %}
-            {% for project in sorted limit:6 %}
+            {% for featured_project_slug in site.data.featured_projects limit:6 %}
+            {% assign project = site.projects | where: 'slug', featured_project_slug | first %}
+            {% if project %}
             <article class="project col col-4 col-w-6 col-t-12">
               <div class="project__content">
                 {% if project.image %}
@@ -48,6 +49,7 @@
                 </div>
               </div>
             </article>
+            {% endif %}
             {% endfor %}
           </div>
 

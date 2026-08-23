@@ -9,7 +9,7 @@ article:
   year: 2026
   journal: Ecosphere
   title: "A primer on forest structure measurement with lidar for ecologists"
-image: '/images/Cushman_lidar_primer.jpeg'
+image: '/images/Cushman_lidar_primer_cropped.jpeg'
 ---
 
 <figure class="project-figure">

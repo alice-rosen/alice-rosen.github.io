@@ -10,6 +10,7 @@
   var orcid = list.dataset.orcid;
   var apiRoot = "https://pub.orcid.org/v3.0/" + encodeURIComponent(orcid);
   var requestOptions = { headers: { Accept: "application/json" } };
+  var ignoredDois = ["10.37207/crm.5.2r"];
 
   function appendText(element, text) {
     element.appendChild(document.createTextNode(text));
@@ -38,6 +39,17 @@
       return id["external-id-type"] === type;
     });
     return match ? match["external-id-value"] : "";
+  }
+
+  function normalizedDoi(item) {
+    return externalId(item, "doi")
+      .toLowerCase()
+      .replace(/^https?:\/\/(?:dx\.)?doi\.org\//, "")
+      .trim();
+  }
+
+  function isIgnored(item) {
+    return ignoredDois.indexOf(normalizedDoi(item)) !== -1;
   }
 
   function publicationUrl(item) {
@@ -131,7 +143,9 @@
       }));
     })
     .then(function (items) {
-      items = items.filter(Boolean).sort(function (a, b) {
+      items = items.filter(function (item) {
+        return item && !isIgnored(item);
+      }).sort(function (a, b) {
         return publicationDate(b).localeCompare(publicationDate(a));
       });
       list.textContent = "";

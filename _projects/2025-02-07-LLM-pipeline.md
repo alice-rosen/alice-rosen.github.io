@@ -1,13 +1,14 @@
 ---
 title: AI-assisted literature reviews
 subtitle: Figure Design
-summary: A graphic created to accompany a pratical workflow for LLM-powered literature reviews. In this case, the structure and content had already been decided; my role was to turn the workflow into a clear and visually engaging figure.
+summary: A graphic created to accompany a practical workflow for LLM-powered literature reviews. In this case, the structure and content had already been decided; my role was to turn the workflow into a clear and visually engaging figure.
 tools: Affinity Designer
 article:
-  doi: 10.32942/X26W6Q
-  authors: Moorthy et al.
-  year: 2025
-  title: "Harnessing Large Language Models for Ecological Literature Reviews: A Practical Pipeline"
+  doi: 10.1111/2041-210x.70403
+  authors: Krishna Moorthy et al.
+  year: 2026
+  journal: Methods in Ecology and Evolution
+  title: "Context-engineering large language models for scalable structured metadata extraction in ecological literature reviews"
 image: '/images/LLM_pipeline_figure_after.jpeg'
 comparisons:
   - title:

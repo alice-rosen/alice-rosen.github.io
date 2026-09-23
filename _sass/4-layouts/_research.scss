@@ -8,6 +8,132 @@
   .publications {
     margin-top: 72px;
   }
+
+  .conference-posters {
+    margin: 48px 0 0;
+  }
+}
+
+.conference-posters__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.conference-poster {
+  min-width: 0;
+}
+
+.conference-poster__image {
+  display: block;
+  aspect-ratio: 1 / 1.414;
+  transition: transform .25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
+  }
+}
+
+.conference-poster__content {
+  padding: 16px 4px 0;
+}
+
+.conference-poster__title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.conference-poster__subtitle,
+.conference-poster__meta {
+  margin: 3px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.conference-poster__subtitle {
+  color: var(--text-color);
+}
+
+.conference-poster__meta {
+  color: var(--text-alt-color);
+}
+
+.poster-lightbox {
+  width: fit-content;
+  max-width: min(92vw, 1100px);
+  max-height: 94vh;
+  padding: 48px 20px 18px;
+  border: 0;
+  border-radius: 14px;
+  color: var(--text-color);
+  background: var(--background-color);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .35);
+
+  &::backdrop {
+    background: rgba(0, 0, 0, .72);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.poster-lightbox__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--heading-font-color);
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary-color);
+    background: var(--background-alt-color);
+  }
+}
+
+.poster-lightbox__figure {
+  margin: 0;
+}
+
+.poster-lightbox__image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(94vh - 120px);
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .14);
+}
+
+.poster-lightbox__caption {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+
+  strong {
+    color: var(--heading-font-color);
+  }
+}
+
+.poster-lightbox__meta {
+  color: var(--text-alt-color);
 }
 
 .publications__list {
@@ -79,6 +205,33 @@
 }
 
 @media (max-width: $mobile) {
+  .conference-posters__grid {
+    grid-template-columns: repeat(3, minmax(210px, 72vw));
+    gap: 16px;
+    margin-right: -20px;
+    padding-right: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .conference-poster {
+    scroll-snap-align: start;
+  }
+
+  .poster-lightbox {
+    max-width: 96vw;
+    padding: 44px 10px 14px;
+  }
+
+  .poster-lightbox__caption {
+    display: block;
+
+    span {
+      display: block;
+      margin-top: 2px;
+    }
+  }
+
   .research-page .publications {
     margin-top: 56px;
   }

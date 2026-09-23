@@ -1,0 +1,19 @@
+- name: BioSpace25
+  subtitle: Biodiversity Insight from Space
+  location: ESA-ESRIN, Frascati, Italy
+  year: 2025
+  image: /images/BioSpace25_poster_ESA_Frascati_Italy.jpg
+  alt: Poster titled “Does 3D forest structure predict resilience to drought?”
+
+- name: EvoDemoS
+  subtitle: Evolutionary Demography Society
+  location: Paris, France
+  year: 2023
+  image: /images/EvoDemo-poster-Paris-France-2023.jpg
+  alt: Poster titled “Modelling forest dynamics at scale using integral projection models and multi-temporal LiDAR”
+
+- name: Postgraduate Symposium
+  location: University of Bristol, UK
+  year: 2021
+  image: /images/PG Symposium poster_low_res.jpeg
+  alt: Poster titled “The structural complexity of tropical forest canopies”

@@ -47,6 +47,43 @@ permalink: /science/
     {% endif %}
   </div>
 
+  <section class="section conference-posters animate" aria-labelledby="conference-posters-title">
+    <div class="container">
+      <div class="section__info">
+        <div class="section__head">
+          <h2 class="section__title" id="conference-posters-title">Conference posters</h2>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none" aria-hidden="true"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+      </div>
+
+      <div class="conference-posters__grid">
+        {% for poster in site.data.conference_posters %}
+        <article class="conference-poster">
+          <a class="conference-poster__image" href="{{ poster.image | relative_url }}" data-poster-lightbox aria-label="Enlarge the {{ poster.name }} poster">
+            <img class="lazy" data-src="{{ poster.image | relative_url }}" alt="{{ poster.alt }}">
+          </a>
+          <div class="conference-poster__content">
+            <h3 class="conference-poster__title">{{ poster.name }}</h3>
+            {% if poster.subtitle %}<p class="conference-poster__subtitle">{{ poster.subtitle }}</p>{% endif %}
+            <p class="conference-poster__meta">{{ poster.year }} <span aria-hidden="true">·</span> {{ poster.location }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <dialog class="poster-lightbox" id="poster-lightbox" aria-labelledby="poster-lightbox-title">
+    <button class="poster-lightbox__close" type="button" aria-label="Close enlarged poster">&times;</button>
+    <figure class="poster-lightbox__figure">
+      <img class="poster-lightbox__image" alt="">
+      <figcaption class="poster-lightbox__caption">
+        <strong id="poster-lightbox-title"></strong>
+        <span class="poster-lightbox__meta"></span>
+      </figcaption>
+    </figure>
+  </dialog>
+
   <section class="section publications animate" aria-labelledby="publications-title">
     <div class="container">
       <div class="section__info">

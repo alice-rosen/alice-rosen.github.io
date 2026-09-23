@@ -11,7 +11,7 @@
     flex-wrap: wrap;
   }
 
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     margin-bottom: 48px;
   }
 
@@ -75,7 +75,7 @@
   align-items: center;
   transform: translateX(-50%);
 
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     position: absolute;
     top: 48px;
     right: $base-spacing-unit;
@@ -169,7 +169,7 @@
 }
 
 .dark-mode {
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     .main-nav {
       background-color: var(--background-alt-color);
     }
@@ -180,7 +180,7 @@
   display: flex;
   align-items: center;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     display: block;
   }
 }
@@ -316,14 +316,14 @@
   .dropdown-menu {
     background-color: var(--background-alt-color);
 
-    @media (max-width: $desktop) {
+    @media (max-width: $header-breakpoint) {
       background-color: inherit;
     }
   }
 }
 
 .social-nav {
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     display: none;
   }
 }
@@ -335,7 +335,7 @@
   display: none;
   cursor: pointer;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     display: flex;
     align-items: center;
   }

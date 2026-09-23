@@ -4,7 +4,7 @@
   align-items: center;
   gap: 16px;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $header-breakpoint) {
     display: none;
   }
 }
